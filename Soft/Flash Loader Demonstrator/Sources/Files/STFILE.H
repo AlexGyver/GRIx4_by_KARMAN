@@ -1,0 +1,105 @@
+/******************** (C) COPYRIGHT 2015 STMicroelectronics ********************
+* File Name          : STFILE.h
+* Author             : MCD Application Team
+* Version            : v2.8.0
+* Date               : 01-September-2015
+* Description        : Defines STFILE components types
+********************************************************************************
+* THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+* WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+* AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+* INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+* CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+* INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+********************************************************************************
+* FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE
+* "MCD-ST Liberty SW License Agreement V2.pdf"
+*******************************************************************************/
+
+#ifndef _ST_FILE_H_
+#define _ST_FILE_H_
+
+#pragma pack(1)
+
+#define PREFIX_SIGNATURE_SIZE	5
+#define PREFIX_SIGNATURE		"STM32"
+#define PREFIX_VERSION			1
+
+typedef struct
+{
+	char	szSignature[PREFIX_SIGNATURE_SIZE];
+	BYTE	bVersion;
+	/*DWORD*/ULONGLONG	dwImageSize;  /*ST*/
+	BYTE	bTargets;
+} PREFIX, *PPREFIX;
+
+typedef struct
+{
+	BYTE bcdDeviceLo;
+	BYTE bcdDeviceHi;
+	BYTE idProductLo;
+	BYTE idProductHi;
+	BYTE idVendorLo;
+	BYTE idVendorHi;
+	BYTE bcdLo;
+	BYTE bcdHi;
+	char ucSignature[3];
+	BYTE bLength;
+	BYTE dwCRC[4];
+} SUFFIX, *PSUFFIX;
+
+#define TARGET_PREFIX_SIGNATURE_SIZE	6
+#define TARGET_PREFIX_SIGNATURE		"Target"
+
+typedef struct
+{
+	char	szSignature[TARGET_PREFIX_SIGNATURE_SIZE];
+	BYTE	bAlternateSetting;
+	BOOL	bTargetNamed;
+	char	szTargetName[255];
+	DWORD	dwTargetSize;
+	DWORD	dwNbElements;
+} TARGETPREFIX, *PTARGETPREFIX;
+
+#pragma warning( disable : 4200 )
+
+typedef struct
+{
+	DWORD	dwElementAddress;
+	DWORD	dwElementSize;
+	BYTE	Data[0];
+} ELEMENT, *PELEMENT;
+
+#pragma pack()
+
+class CSTFile : public CObject 
+{
+public:
+	CSTFile(PSTR szPath);
+	CSTFile(PSTR szPath, WORD Vid, WORD Pid, WORD Bcd);
+
+	virtual ~CSTFile();
+
+	WORD GetVid() { return m_Vid; }
+	WORD GetPid() { return m_Pid; }
+	WORD GetBcd() { return m_Bcd; }
+	DWORD GetError() { return m_Error; }
+	BYTE GetNbAlternates() { return m_NbAlternates; }
+
+	DWORD	AppendImage(HANDLE Image);
+	DWORD	ReadImage(int Rank, PHANDLE pImage);
+private:
+	WORD	m_Vid;
+	WORD	m_Pid;
+	WORD	m_Bcd;
+	BYTE	m_NbAlternates;
+	CFile	m_File;
+	DWORD	m_Error;
+	BYTE	m_Version;
+	DWORD	AppendSuffix();
+	DWORD	CalculateCRC();
+};
+
+#endif
+
+/******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE******/

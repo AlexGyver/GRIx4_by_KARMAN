@@ -1,0 +1,21 @@
+; Files.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Files"
+DESCRIPTION  'Files Windows Dynamic Link Library'
+
+EXPORTS
+  FILES_CreateImage
+  FILES_CreateImageFromMapping
+  FILES_DuplicateImage
+  FILES_FilterImageForOperation
+  FILES_DestroyImageElement
+  FILES_DestroyImage
+  FILES_GetImageNbElement
+  FILES_SetImageElement
+  FILES_GetImageElement
+  FILES_ImageFromFile
+  FILES_ImageToFile
+  FILES_GetImageAlternate
+  FILES_GetImageName
+  FILES_SetImageName
+  FILES_GetMemoryMapping

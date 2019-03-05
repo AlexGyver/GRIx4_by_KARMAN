@@ -1,0 +1,9 @@
+# Microsoft Developer Studio Generated Dependency File, included by STMFlashLoader.mak
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\STMFlashLoader.cpp : \
+	".\StdAfx.h"\
+	

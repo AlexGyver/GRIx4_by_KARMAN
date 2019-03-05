@@ -1,0 +1,33 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "STUARTBLLIB"=".\STUARTBLLIB.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/PC Consumer/Common/UTT/Work/Sources/DLL-Sources/Root1/Root1__USB_2_0__9_4_1_B__V1/Debug", ESSAAAAA
+    ..\stblgui
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

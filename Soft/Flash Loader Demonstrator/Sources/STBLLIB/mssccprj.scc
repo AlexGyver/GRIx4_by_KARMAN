@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[STBLLIB.dsp]
+SCC_Aux_Path = "\\fnt01\vss$\pwa-db"
+SCC_Project_Name = "$/PC/ST Generic Boot Loader/SOFTWARE/STBLLIB", COSAAAAA
+
+[STBLLIB.vcproj]
+SCC_Aux_Path = "\\fnt01\vss$\pwa-db"
+SCC_Project_Name = "$/PC/ST Generic Boot Loader/SOFTWARE/STBLLIB", COSAAAAA

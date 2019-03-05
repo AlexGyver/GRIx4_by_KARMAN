@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: STMFlashLoader - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPBF.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /D "_VS6_USED" /D "_AFXDLL" /FR"Release/" /Fp"Release/STMFlashLoader.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STMFlashLoader\Ini.cpp"
+"C:\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STMFlashLoader\STMFlashLoader.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPBF.tmp" 
+Creating temporary file "C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPC0.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /D "_VS6_USED" /D "_AFXDLL" /FR"Release/" /Fp"Release/STMFlashLoader.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STMFlashLoader\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPC0.tmp" 
+Creating temporary file "C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPC1.tmp" with contents
+[
+..\STBLLIB\Release\STBLLIB.lib ..\Files\Release\Files.lib /nologo /subsystem:console /incremental:no /pdb:"Release/STMFlashLoader.pdb" /machine:I386 /out:"..\BIN\Release\STMFlashLoader.exe" 
+".\Release\Ini.obj"
+".\Release\StdAfx.obj"
+".\Release\STMFlashLoader.obj"
+"\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STBLLIB\Release\STBLLIB.lib"
+"\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\Files\Release\Files.lib"
+"\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STCANBLLIB\Release\STCANBLLIB.lib"
+"\VSS_PC\PC\ST Generic Boot Loader\SOFTWARE\STUARTBLLIB\Release\STUARTBLLIB.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\MOHAME~1\LOCALS~1\Temp\RSPC1.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+Ini.cpp
+STMFlashLoader.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+STMFlashLoader.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
