@@ -12,4 +12,3 @@
 
 ### Плата
 ![PHOTO](https://github.com/AlexGyver/GRIx4_by_KARMAN/blob/master/Photo/PCB1.jpg)
-
